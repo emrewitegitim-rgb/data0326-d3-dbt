@@ -1,0 +1,34 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: course14_copy
+    tables:
+      - name: sales
+        identifier: gwz_sales
+        description: Sales list in greenweez company
+        columns:
+          - name: date_date
+            description: date of the order
+            tests:
+              - not_null
+          - name: products_id
+            description: id of the product
+            tests:
+              - not_null
+      - name: customers
+        identifier: gwz_customers
+        description: includes name and surname of the customer
+        columns:
+          - name: id
+            description: unique id of the customer
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: name of the customer
+            tests:
+              - not_null
+            
+
+
